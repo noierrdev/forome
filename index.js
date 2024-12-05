@@ -50,6 +50,7 @@ function connectGeyser(){
                             allAccounts.push(accountID);
                         })
                         console.log(`https://solscan.io/tx/${sig}`)
+                        console.log(allAccounts)
 
 
                 }
