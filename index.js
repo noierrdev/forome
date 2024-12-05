@@ -1,7 +1,7 @@
 require("dotenv").config()
 //
 
-const {Connection, PublicKey, Keypair, Transaction, SystemProgram}=require("@solana/web3.js")
+const {Connection, PublicKey, Keypair, Transaction, SystemProgram, TransactionMessage, VersionedTransaction}=require("@solana/web3.js")
 const Client=require("@triton-one/yellowstone-grpc");
 const bs58=require("bs58")
 
