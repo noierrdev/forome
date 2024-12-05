@@ -138,12 +138,12 @@ function connectGeyser(){
                                 })
                                 .then(response=>response.json())
                                 .then(response=>{
-                                  console.log(`----------${buy?"BUY":"SELL"} : ${endpoint}-------------`)
+                                  console.log(`----------${endpoint}-------------`)
                                   console.log(response)
                                   console.log(`-----------------------------------`)
                                 })
                                 .catch(error=>{
-                                  console.log(`----------${buy?"BUY":"SELL"} : ${endpoint}-------------`)
+                                  console.log(`----------${endpoint}-------------`)
                                   console.log(error)
                                   console.log(`-----------------------------------`)
                                 });
