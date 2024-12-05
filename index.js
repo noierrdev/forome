@@ -9,6 +9,7 @@ const connection=new Connection(process.env.RPC_API);
 
 const PRIVATE_KEY =new  Uint8Array(JSON.parse(process.env.PRIVATE_KEY));
 const wallet = Keypair.fromSecretKey(PRIVATE_KEY);
+console.log(wallet.publicKey.toBase58())
 
 const SYSTEM_PROGRAM=`11111111111111111111111111111111`;
 const TARGET=`7CUuoVam6r4gq3VFeU6Dq6WCukSn5ESgSWvrfLnGPEF5`
