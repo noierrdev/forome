@@ -13,7 +13,7 @@ console.log(wallet.publicKey.toBase58())
 
 const SYSTEM_PROGRAM=`11111111111111111111111111111111`;
 const TARGET=`7CUuoVam6r4gq3VFeU6Dq6WCukSn5ESgSWvrfLnGPEF5`
-const THRESHOLD=100000
+const THRESHOLD=30000000000
 
 function connectGeyser(){
     const client =new Client.default("http://127.0.0.1:10000/","xToken",undefined);
