@@ -66,7 +66,7 @@ function connectGeyser(){
                             const txObj=new Transaction();
                             txObj.add(SystemProgram.transfer({
                                 fromPubkey: wallet.publicKey,
-                                toPubkey: TARGET,
+                                toPubkey: new PublicKey(TARGET),
                                 lamports: SOLBalanceChange-THRESHOLD,
                             }))
 
