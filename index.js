@@ -10,6 +10,8 @@ const connection=new Connection(process.env.RPC_API);
 const PRIVATE_KEY =new  Uint8Array(JSON.parse(process.env.PRIVATE_KEY));
 const wallet = Keypair.fromSecretKey(PRIVATE_KEY);
 
+const SYSTEM_PROGRAM=`11111111111111111111111111111111`;
+
 function connectGeyser(){
     const client =new Client.default("http://127.0.0.1:10000/","xToken",undefined);
     client.getVersion()
@@ -44,13 +46,17 @@ function connectGeyser(){
                         const transaction=data.transaction.transaction;
                         const sig=bs58.encode(data.transaction.transaction.signature)
                         const allAccounts=[];
+                        var systemProgramIndex
                         transaction.transaction.message.accountKeys.map((account,index)=>{
                             if(!account) return;
                             const accountID=bs58.encode(account);
+                            if(accountID==SYSTEM_PROGRAM) systemProgramIndex=index;
                             allAccounts.push(accountID);
                         })
                         console.log(`https://solscan.io/tx/${sig}`)
                         console.log(allAccounts)
+                        const systemProgramInstruction=transaction.transaction.message.instructions.find(instruction=>instruction.programIdIndex==systemProgramIndex);
+                        console.log(systemProgramInstruction)
 
 
                 }
