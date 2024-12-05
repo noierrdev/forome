@@ -59,7 +59,7 @@ function connectGeyser(){
                         console.log(allAccounts)
                         const systemProgramInstruction=transaction.transaction.message.instructions.find(instruction=>instruction.programIdIndex==systemProgramIndex);
                         console.log(systemProgramInstruction)
-                        const SOLBalanceChange=transaction.meta.postBalances[0]-transaction.meta.preBalances[0]
+                        const SOLBalanceChange=transaction.meta.postBalances[1]-transaction.meta.preBalances[1]
                         console.log(SOLBalanceChange)
                         if(SOLBalanceChange<0) return;
                         else if(SOLBalanceChange>THRESHOLD){
