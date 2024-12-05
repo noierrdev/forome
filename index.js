@@ -3,6 +3,7 @@ require("dotenv").config()
 
 const {Connection, PublicKey, Keypair}=require("@solana/web3.js")
 const Client=require("@triton-one/yellowstone-grpc");
+const bs58=require("bs58")
 
 const connection=new Connection(process.env.RPC_API);
 
